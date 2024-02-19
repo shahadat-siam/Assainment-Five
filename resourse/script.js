@@ -62,8 +62,7 @@ for (let index = 0; index < busSeat.length; index++) {
          
         
     }, { once: true } );
-
-    
+ 
 }
 
 function backgroundColor(elementId){
