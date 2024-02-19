@@ -2,11 +2,13 @@ const busSeat = document.querySelectorAll('.bus-seat');
   
 
 for (let index = 0; index < busSeat.length; index++) {
-    const seat = busSeat[index];  
+    const seat = busSeat[index];
+     
     seat.addEventListener('click',function(){
-         
+        //  console.log(seat)
         const innerText = seat.innerText;  
         backgroundColor(innerText);
+         
 
         //----- set seat-class-price ----------
         const seatClassPrice = document.getElementById('seat-class-price'); 
@@ -88,11 +90,16 @@ for (let index = 0; index < busSeat.length; index++) {
                     alert ('invalid cupon code')
                 }
             })    
-         }   
+         }
+         else if(newNum > 4){
+            alert ('you can not book 4+ seat');     
+         } 
+         
+       
  
     }, { once: true } );
  
-}
+} 
 
 function backgroundColor(elementId){
     const element = document.getElementById(elementId);
@@ -106,8 +113,8 @@ function removeElement (elementId){
  function hideKorlam(elementId){
     const element = document.getElementById(elementId);
     element.classList.add('hidden'); 
-} 
-// function addelement (elementId){
-//     const element = document.getElementById(elementId);
-//     element.setAttribute('disabled');
-// }
+}  
+function addelement (elementId){
+    const element = document.getElementsById(elementId);
+    element.classList.remove('bus-seat');
+}
