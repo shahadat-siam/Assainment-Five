@@ -127,12 +127,12 @@
                 <div class="lg:w-[70%] w-[100%]  px-5 py-6  ">
                     <div class="flex items-center justify-between">
                         <div>
-                            <div class="flex items-center gap-3">
+                            <div class="lg:flex block items-center gap-3">
                                 <p><img src="resourse/images/bus-logo.png" alt=""></p>
                                 <p class="text-3xl font-bold text-black">Greenline Paribahan <br> <span class="text-[16px] text-[#03071299]">Coach-009-WEB ! AC_Business </span></p>
                             </div> 
                         </div>
-                        <div class="bg-[#1dd10026] px-4 py-3 rounded-xl text-[#1dd100] font-bold flex gap-2">
+                        <div class="bg-[#1dd10026] px-4 py-3 rounded-xl text-[#1dd100] font-bold lg:flex block gap-2">
                             <img src="resourse/images/seat-green.png" alt="">
                             <p class=" "> <span id="total-Seat">40</span> Seats left</p>
                         </div>
@@ -163,7 +163,7 @@
         </div>
         </section>
 
-        <section class=" lg:px-20 px-5 py-4">
+        <section class=" lg:px-20 px-5 py-4"> 
             <div class="lg:flex block gap-8 bg-[#f5f5f5] px-5 rounded-xl py-6">
                 <div class="lg:w-[65%] w-[100%]">
                     <h1 class="text-2xl mx-5 font-bold">Select Your Seat</h1>
@@ -273,11 +273,16 @@
                             <h2 class="font-bold">Total Price</h2>
                             <p class="font-semibold">BDT <span id="total-price">0</span></p>
                         </div>
-                        <div>
-                            <label class="mx-5 input  flex items-center gap-2">
-                                <input type="text" class="grow outline-none bg-[#fafafaf6]" placeholder=" Have any copupon?" />
-                                <button class="bg-[#1dd100] text-white font-bold px-4 py-2 rounded-md">Apply</button>
-                            </label>
+                        <div class="flex justify-between mx-4 pb-4" id="discount">
+                            <h2 class="font-bold">Discount Price</h2>
+                            <p class="font-semibold">BDT <span id="discount-price">0</span></p>
+                        </div>
+                        <div id="hide-korlam">
+                            <label class="mx-5 input flex items-center gap-2">
+                                <input id="apply-input-field" type="text" class="grow outline-none bg-[#fafafaf6]" placeholder=" Have any copupon?" />
+                                <button id="apply-btn" disabled  class="bg-[#1dd100] text-white font-bold px-4 py-2 rounded-md">Apply</button>
+                            </label> 
+                           
                         </div>
                         <div class="flex justify-between px-5 py-4">
                             <h2 class="font-bold">Grand Total </h2>
@@ -324,7 +329,7 @@
             </div>
         </section>
     </main>
-    
+     
 <script src="resourse/script.js"></script>
 
 </body>

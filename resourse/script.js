@@ -2,7 +2,7 @@ const busSeat = document.querySelectorAll('.bus-seat');
   
 
 for (let index = 0; index < busSeat.length; index++) {
-    const seat = busSeat[index]; 
+    const seat = busSeat[index];  
     seat.addEventListener('click',function(){
          
         const innerText = seat.innerText;  
@@ -56,11 +56,40 @@ for (let index = 0; index < busSeat.length; index++) {
          inputNumber.addEventListener('input', function(event){
            const inputText = event.target.value;
            if(inputText >= 0 && inputText <= 9){
-            removeElement ('btn-next');
+            removeElement ('btn-next'); 
            }
          })
          
-        
+         
+         // ---- chalange part ----------
+        const applyButton = document.getElementById('apply-btn'); 
+         if(newNum == 4){ 
+            removeElement ('apply-btn');
+            applyButton.addEventListener('click', function(){
+                const applyInputField = document.getElementById('apply-input-field').value;
+                if(applyInputField === 'NEW15'){ 
+                    const discountPrice = totalcost * 0.15; 
+                    const initialDis = document.getElementById('discount-price');
+                    initialDis.innerText = discountPrice;
+                    hideKorlam('hide-korlam');
+                    const grandTotal = parseInt(grantPrice.innerText) - discountPrice;  
+                    grantPrice.innerText = grandTotal;
+                    
+                }
+                else if(applyInputField === 'Couple 20'){
+                    const discountPrice = totalcost * 0.2;
+                    const initialDis = document.getElementById('discount-price');
+                    initialDis.innerText = discountPrice; 
+                    hideKorlam('hide-korlam');
+                    const grandTotal = parseInt(grantPrice.innerText) - discountPrice;  
+                    grantPrice.innerText = grandTotal;
+                }
+                else if(applyInputField !== 'NEW15' || applyInputField !== 'Couple 20') {
+                    alert ('invalid cupon code')
+                }
+            })    
+         }   
+ 
     }, { once: true } );
  
 }
@@ -68,9 +97,17 @@ for (let index = 0; index < busSeat.length; index++) {
 function backgroundColor(elementId){
     const element = document.getElementById(elementId);
     element.classList.add('bg-green-500');
-    element.classList.add('text-white')
+    element.classList.add('text-white');
 } 
 function removeElement (elementId){
     const element = document.getElementById(elementId);
     element.removeAttribute('disabled');
-}
+ }
+ function hideKorlam(elementId){
+    const element = document.getElementById(elementId);
+    element.classList.add('hidden'); 
+} 
+// function addelement (elementId){
+//     const element = document.getElementById(elementId);
+//     element.setAttribute('disabled');
+// }
